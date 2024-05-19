@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="main_title">Sudoku</string>
+    <string name="continue_label">Continue</string>
+    <string name="new_game_label">New Game</string>
+    <string name="about_label">About</string>
+    <string name="exit_label">Exit</string>
+    <string name="about_title">About Sudoku</string>
+    <string name="about_text">
+Sudoku is a logic-based puzzle game where the objective is to fill a 9x9 grid with digits so that each column, each row, and each of the nine 3x3 subgrids contain all of the digits from 1 to 9 without any repetition.
+        \n\nThe game starts with a partially filled grid, and the player must use logic and deductive reasoning to complete the grid.
+    \n\nThe game Sudoku was created by Vladislav Kan.</string>
+    <string name="settings_label">Settings...</string>
+    <string name="settings_title">Sweet Sudoku settings</string>
+    <string name="settings_shortcut">s</string>
+    <string name="music_title">Music ♫</string>
+    <string name="music_summary">Play background music</string>
+    <string name="hints_title">Hints ✹</string>
+    <string name="hints_summary">Show hints during play</string>
+    <string name="new_game_title">Difficulty</string>
+    <string name="easy_label">Easy</string>
+    <string name="medium_label">Medium</string>
+    <string name="hard_label">Hard</string>
+    <string name="game_title">Game</string>
+    <string name="no_moves_label">No moves</string>
+    <string name="keypad_title">Keypad</string>
+    <string name="share">Share...</string>
+    <string name="share_shortcut">p</string>
+    <string name="text_share_app">Share App</string>
+</resources>
