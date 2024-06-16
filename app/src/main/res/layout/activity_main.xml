@@ -76,6 +76,20 @@
             android:layout_gravity="center_horizontal"
             android:backgroundTint="@color/puzzle_hilite"
             />
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/rules_button"
+            android:layout_width="match_parent"
+            android:textColor="@color/colorBlue"
+            android:layout_height="40dp"
+            android:text="@string/more_label"
+            android:layout_marginBottom="7dip"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/puzzle_hilite"
+            />
+
         <com.google.android.material.button.MaterialButton
 
             android:id="@+id/exit_button"

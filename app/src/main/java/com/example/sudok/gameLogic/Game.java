@@ -3,11 +3,13 @@ package com.example.sudok.gameLogic;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.example.sudok.score.ScoreActivity;
 import com.example.sudok.settings.Music;
 import com.example.sudok.R;
 
@@ -40,6 +42,18 @@ public class Game extends AppCompatActivity {
 
         getIntent().putExtra(KEY_DIFFICULTY, DIFFICULTY_CONTINUE);
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        boolean isComplete = isComplete(); // Метод, который проверяет, завершена ли игра
+
+        Intent intent = new Intent(this, ScoreActivity.class);
+        intent.putExtra("isComplete", isComplete);
+        startActivity(intent);
+        finish();
     }
 
 protected void showKeypadOrError(int x, int y) {
@@ -164,6 +178,22 @@ protected void showKeypadOrError(int x, int y) {
         else
             return String.valueOf(v);
     }
+
+
+
+    public boolean isComplete() {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (getTile(i, j) == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -200,5 +230,8 @@ protected void showKeypadOrError(int x, int y) {
             }
             return fromPuzzleString(puz);
         }
+
+
+
 
 }

@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/puzzle_hilite">
+
+    <!-- Анимация на заднем плане -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/backgroundAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_rawRes="@raw/animation_t"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"/>
+
+    <!-- Верхняя часть -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="300dp">
+
+            <TextView
+                android:id="@+id/scoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:padding="16dp"
+                android:text="Очки: 0" />
+
+            <TextView
+                android:id="@+id/iqTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:padding="16dp"
+                android:text="Ваш IQ: 0" />
+
+            <Button
+                android:id="@+id/playAgainButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="130dp"
+                android:text="Начать заново"
+                android:backgroundTint="#2F343A"
+                android:padding="16dp" />
+
+            <Button
+                android:id="@+id/mainMenuButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#2F343A"
+                android:text="Главное меню"
+                android:padding="16dp"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

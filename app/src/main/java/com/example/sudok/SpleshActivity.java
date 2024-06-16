@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.example.sudok.auth.LoginActivity;
 
 public class SpleshActivity extends AppCompatActivity {
     LottieAnimationView lotty_s;
@@ -22,7 +23,7 @@ public class SpleshActivity extends AppCompatActivity {
             public void run() {
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
-                Intent intent = new Intent(SpleshActivity.this, MainActivity.class);
+                Intent intent = new Intent(SpleshActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

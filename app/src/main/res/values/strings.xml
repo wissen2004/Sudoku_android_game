@@ -25,6 +25,11 @@ Sudoku is a logic-based puzzle game where the objective is to fill a 9x9 grid wi
     <string name="no_moves_label">No moves</string>
     <string name="keypad_title">Keypad</string>
     <string name="share">Share...</string>
+    <string name="log_out">Log out</string>
     <string name="share_shortcut">p</string>
     <string name="text_share_app">Share App</string>
+    <string name="more_label">How to play</string><string name="sudoku_rules_title">Sudoku Rules</string>
+    <string name="sudoku_example_image">Sudoku Example Image</string>
+    <string name="sudoku_rules">Sudoku is a logic-based number placement puzzle. The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids that compose the grid contain all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a unique solution.</string>
+    <string name="watch_video">Watch Video</string>
 </resources>

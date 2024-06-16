@@ -14,14 +14,22 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.sudok.aboutpage.About;
+import com.example.sudok.auth.LoginActivity;
+import com.example.sudok.databinding.ActivityMainBinding;
 import com.example.sudok.gameLogic.Game;
+import com.example.sudok.how_play.SudokuRulesFragment;
 import com.example.sudok.settings.Prefs;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         aboutButton.setOnClickListener(this);
         Button exitButton = findViewById(R.id.exit_button);
         exitButton.setOnClickListener(this);
+        Button rulesButton = findViewById(R.id.rules_button);
+        rulesButton.setOnClickListener(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -48,10 +58,14 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             if (v.getId() == R.id.about_button) {
                 Intent i = new Intent(this, About.class);
                 startActivity(i);
-            } else if (v.getId() == R.id.new_button) {
+            }
+            else if (v.getId() == R.id.rules_button) {
+                Intent i = new Intent(this, SudokuRulesFragment.class);
+                startActivity(i);
+            }else if (v.getId() == R.id.new_button) {
                 openNewGameDialog();
             } else if (v.getId() == R.id.exit_button) {
-                finish();
+                finishAffinity();
             } else if (v.getId() == R.id.continue_button) {
                 startGame(Game.DIFFICULTY_CONTINUE);
             }
@@ -88,6 +102,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                     getString(R.string.text_share_app)));
             return true;
         }
+     else if (id == R.id.log_out) {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
+        Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
+        return true;
+    }
         return super.onOptionsItemSelected(item);
     }
 
